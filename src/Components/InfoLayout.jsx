@@ -5,7 +5,7 @@ const InfoLayout = ({ children, title }) => {
   const navigate = useNavigate();
 
   const handleNav = () => {
-    navigate("/");
+    navigate("/web-portfolio");
   };
 
   return (
