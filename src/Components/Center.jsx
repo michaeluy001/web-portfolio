@@ -1,5 +1,4 @@
 import Project from "./Project";
-
 import CTA from "./CTA";
 import mike from "/src/assets/mike_astro.png";
 
@@ -11,6 +10,7 @@ const Center = () => {
         <Frame />
         <Buttons />
       </div>
+      <div className=" w-2/3 lg:w-1/2 m-auto h-[1px] bg-gray-700 opacity-20" />
     </>
   );
 };
@@ -20,7 +20,7 @@ const Buttons = () => {
   return (
     <>
       <div className="w-50 h-15 text-center my-10 space-y-3 justify-items-center">
-        <div className="   bg-gray-800/50 h-[2px] w-full" />
+        <div className="bg-gray-800/50 h-[2px] w-full" />
         <CTA type="primary" title="View My Project">
           <Project />
         </CTA>

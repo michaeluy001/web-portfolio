@@ -1,14 +1,46 @@
-import Center from "./Center";
-import Header from "./Header";
-import CardsSection from "./CardsSection";
+import { Routes, Route } from "react-router-dom";
+import Center from "./Components/Center"
+import Header from "./Components/Header";
+import Skills from "./Components/Skills";
+import AboutMe from "./Components/AboutMe";
+import ContactMe from "./Components/Contact";
+import Info from "./Components/Info";
+import InfoLayout from "./Components/InfoLayout";
+
 
 function App() {
   return (
     <>
-      <div className=" bg-gray-300 content-center ">
+      <div className="   content-center ">
         <Header />
         <Center />
-        <CardsSection />
+        <Routes>
+          <Route path="/" element={<Info />} />
+          <Route
+            path="/aboutme"
+            element={
+              <InfoLayout>
+                <AboutMe />
+              </InfoLayout>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <InfoLayout>
+                <ContactMe />
+              </InfoLayout>
+            }
+          />
+          <Route
+            path="/skills"
+            element={
+              <InfoLayout>
+                <Skills />
+              </InfoLayout>
+            }
+          />
+        </Routes>
       </div>
     </>
   );

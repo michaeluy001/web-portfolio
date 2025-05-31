@@ -10,7 +10,7 @@ const ContentDialog = ({ children, onClose }) => {
   return createPortal(
     <>
       <div
-        className="absolute left-0 top-1/2 -translate-y-1/2  justify-items-center w-full  text-gray-300 "
+        className="fixed left-0 top-1/2 -translate-y-1/2  justify-items-center w-full  text-gray-300 "
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative w-full h-dvh lg:h-200 content-center p-5 overflow-hidden max-w-[700px] bg-gray-600 rounded-xl">

@@ -1,8 +1,8 @@
 import mb1 from "/src/assets/monkeyboo1_still.jpg";
 import mb2bin from "/src/assets/monkeyboo2_bin.jpg";
 import mb2vid from "/src/assets/mb2vid.mp4";
-import { Header } from "./ContentDialog";
-import { ImageHolder } from "./ContentDialog";
+import { Header } from "../Components/ContentDialog";
+import { ImageHolder } from "../Components/ContentDialog";
 
 const MonkeyBoo = () => {
   return (
