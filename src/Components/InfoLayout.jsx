@@ -11,7 +11,7 @@ const InfoLayout = ({ children, title }) => {
   return (
     <>
       <motion.div
-        className="h-full flex w-3/4 flex-col m-25 mx-auto text-center  text-gray-500 "
+        className="h-full flex w-3/4 flex-col m-25 mx-auto text-justify  text-gray-500 "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3, ease: "linear", delay: 0.2 }}
