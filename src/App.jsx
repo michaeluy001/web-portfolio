@@ -12,14 +12,14 @@ import Footer from "./Components/Footer";
 function App() {
   return (
     <>
-      <div className="relative flex flex-col h-full content-center bg-gray-200 text-gray-500">
+      <div className="relative flex flex-col  content-center bg-gray-200 text-gray-500">
         <Header />
         <Center />
         
         <Routes>
-          <Route path="/" element={<Info />} />
+          <Route path="/web-portfolio" element={<Info />} />
           <Route
-            path="/aboutme"
+            path="/web-portfolio/aboutme"
             element={
               <InfoLayout title="The Building Blocks">
                 <AboutMe />
@@ -27,7 +27,7 @@ function App() {
             }
           />
           <Route
-            path="/contact"
+            path="/web-portfolio/contact"
             element={
               <InfoLayout title="Let's Collaborate!">
                 <ContactMe />
@@ -35,7 +35,7 @@ function App() {
             }
           />
           <Route
-            path="/skills"
+            path="/web-portfolio/skills"
             element={
               <InfoLayout title="Tools of the Trade">
                 <Skills />
