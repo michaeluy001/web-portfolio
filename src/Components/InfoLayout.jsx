@@ -21,8 +21,9 @@ const InfoLayout = ({ children, title }) => {
           className="text-2xl mt-15 flex gap-2 cursor-pointer justify-end "
           onClick={handleNav}
         >
-          <IoReturnDownBackOutline className="hover:scale-105 " />
-          <span className="text-sm">Back</span>
+          <div className="bg-gray-500 text-white w-auto flex p-2 gap-2 text-center items-center rounded-2xl hover:scale-105 transition shadow-lg shadow-gray-700/50  ">
+          <IoReturnDownBackOutline className="" />
+          <span className="text-sm">Back</span></div>
         </div>
       </motion.div>
     </>
