@@ -40,9 +40,9 @@ export default ContentDialog;
 export const ImageHolder = ({ image, caption }) => {
   return (
     <>
-      <div className="my-5 relative lg:w-[400px] w-full">
-        <img src={image} />
-        <p className="absolute top-3 right-3 text-gray-800 bg-gray-200 font-bold">
+      <div className="my-5 relative lg:w-[400px] w-full ">
+        <img src={image} className="rounded-2xl" />
+        <p className="absolute px-1 top-3 right-3 text-gray-50 bg-gray-800 font-bold">
           {caption}
         </p>
       </div>
