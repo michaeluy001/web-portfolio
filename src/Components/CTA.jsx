@@ -3,11 +3,11 @@ import ContentDialog from "./ContentDialog";
 
 const CTA = ({ children, title="Button", className = "", type = "primary" }) => {
   const variations = {
-    primary: "bg-green-800 text-white",
+    primary: "bg-amber-600 text-white hover:ring-amber-300",
     secondary: "bg-yellow-600 text-white",
   };
   const baseStyle =
-    "w-auto px-2 rounded-lg h-8 content-center text-center hover:scale-101 transition duration-150 cursor-pointer";
+    "w-45 px-2 rounded-lg h-auto content-center text-center hover:scale-101 transition duration-150 cursor-pointer font-display tracking-widest text-2xl hover:ring-2 ";
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -19,7 +19,7 @@ const CTA = ({ children, title="Button", className = "", type = "primary" }) => 
   return (
     <>
       <button
-        className={`${className} ${baseStyle} ${variations[type]}`}
+        className={`${className} ${baseStyle} ${variations[type]} `}
         onClick={handleOpen}
       > {title}
        {isOpen &&

@@ -1,10 +1,11 @@
+import { MdOutlineArrowDropDown } from "react-icons/md";
 import aboutMe from "/src/assets/About Me.png";
 import callMe from "/src/assets/Call Me.png";
 import skills from "/src/assets/Skills.png";
-import { Link, Outlet,  } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { motion } from "motion/react";
 
 const Info = () => {
-
   const items = [
     {
       src: callMe,
@@ -26,13 +27,20 @@ const Info = () => {
 
   return (
     <>
-      <div className="h-dvh flex flex-col  items-center  justify-items-center justify-evenly  lg:flex-row">
-        { items.map((item, index) => (
+      <div className="text-3xl text-center cursor-pointer justify-items-center">
+        <a href="#card" className="hidden md:flex content-center items-center group justify-items-center mb-20">
+          Hire Me <MdOutlineArrowDropDown className="h-full   group-hover:animate-bounce group-hover:block transition"/>
+        </a>
+      </div>
+      <div
+        className="h-dvh flex flex-col  items-center   justify-items-center gap-10 justify-center lg:flex-row"
+        id="card"
+      >
+        {items.map((item, index) => (
           <Link key={index} to={item.link}>
             <Card key={index} src={item.src} title={item.title} />{" "}
           </Link>
         ))}
-        
       </div>
       <Outlet />
     </>
@@ -43,15 +51,21 @@ export default Info;
 const Card = ({ onClick, src, title }) => {
   return (
     <>
-      <div
-        className="border w-50 h-70 flex- flex-col shadow-md shadow-gray-800 justify-items-center hover:scale-101 transition cursor-pointer"
+      <motion.div
+        className="relative group border w-50 h-full flex-col shadow-md shadow-gray-800 justify-items-center hover:scale-101 transition delay-90 cursor-pointer overflow-hidden lg:grid lg:col-span-1"
         onClick={onClick}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+
+        transition={{ duration: 0.3, delay: 0.3, ease: "linear" }}
       >
-        <img src={src} className="h-5/8" />
-        <div className="border-t mb-auto h-3/8 text-center content-center w-full text-lg">
+        <div className="group-hover:bg-gray-500 transition duration-90">
+          <img src={src} className="" />
+        </div>
+        <div className="absolute transitiond duration-200 text-gray-500 h-10  mb-auto -bottom-20 left-0 text-center content-center w-full text-lg justify-center group-hover:bottom-0 group-hover:bg-white rounded-t-full">
           {title}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
