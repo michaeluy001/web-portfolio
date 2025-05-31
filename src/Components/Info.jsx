@@ -27,21 +27,31 @@ const Info = () => {
 
   return (
     <>
-      <div className="text-3xl text-center cursor-pointer justify-items-center">
-        <a href="#card" className="hidden md:flex content-center items-center group justify-items-center mb-20">
-          Hire Me <MdOutlineArrowDropDown className="h-full   group-hover:animate-bounce group-hover:block transition"/>
+      <div className="h-dvh text-3xl text-center cursor-pointer justify-items-center  items-center space-y-100">
+        <a
+          href="#card"
+          className="hidden md:flex content-center items-center group justify-items-between "
+        >
+          Hire Me
+          <MdOutlineArrowDropDown className="  group-hover:animate-bounce transition" />
         </a>
+        <div
+          className=" flex flex-col  items-center   justify-items-center gap-10 justify-center lg:flex-row"
+          id="card"
+        >
+          {items.map((item, index) => (
+            <Link key={index} to={item.link}>
+              <Card
+                key={index}
+                src={item.src}
+                title={item.title}
+                onClick={() => scrollToSection(sectionRef)}
+              />{" "}
+            </Link>
+          ))}
+        </div>
       </div>
-      <div
-        className="h-dvh flex flex-col  items-center   justify-items-center gap-10 justify-center lg:flex-row"
-        id="card"
-      >
-        {items.map((item, index) => (
-          <Link key={index} to={item.link}>
-            <Card key={index} src={item.src} title={item.title} />{" "}
-          </Link>
-        ))}
-      </div>
+
       <Outlet />
     </>
   );
@@ -56,7 +66,6 @@ const Card = ({ onClick, src, title }) => {
         onClick={onClick}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-
         transition={{ duration: 0.3, delay: 0.3, ease: "linear" }}
       >
         <div className="group-hover:bg-gray-500 transition duration-90">
